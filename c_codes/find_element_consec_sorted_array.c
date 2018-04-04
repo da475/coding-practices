@@ -20,6 +20,17 @@ int find_bin(int *arr, int start, int end){
         
 }
 
+/*
+int find_bin_two_args(int *arr, int size){
+
+    int start = (arr - start_ptr) / sizeof(int);
+    if(size == 1) {
+        if(arr[0] + start + 1 == arr[start]) return (arr[start] - 1);
+        
+    }
+}
+*/
+
 int main()
 {
 

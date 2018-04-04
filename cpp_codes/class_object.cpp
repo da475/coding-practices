@@ -57,7 +57,7 @@ int main() {
     ani.print_legs();
 
     animals *aniptr = new(animals);
-    aniptr->name = "another cow";
+//    aniptr->name = "another cow";     //default name set in construct would print here
     aniptr->print_legs();
 
     dinos dino1;

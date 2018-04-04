@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+class base {
+
+private:
+    int real;
+    int imag;
+public:
+
+    base(int a=0, int b=0) {
+        real = a;
+        imag = b;
+    }
+    base operator + (base &obj) {
+        base res;
+        res.real = obj.real + real;
+        res.imag = obj.imag + imag;
