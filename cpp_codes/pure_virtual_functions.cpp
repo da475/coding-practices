@@ -1,15 +1,12 @@
 
 #include <iostream>
 
+using namespace std;
+
 /*
-
-NOTE: the functions defined as virtual in base class can be
-overridden in the derived class.
-- Mainly tested using a pointer of base class type and assigning
-it the address of a derived class object
-- In this case, there is another issue which is that there is a
-variable of same name in both classes
-
+NOTE: the functions defined as pure virtual in base class can be
+overridden in the derived class. But you cannot make an base
+class object now
 */
 
 class Base {
@@ -22,10 +19,8 @@ class Base {
         ~Base() {
             printf ("Base desc called\n");
         }
-        virtual void func() {
-            printf("func called in base\n");
-            var = 6;
-        }
+
+        virtual void func() = 0;    // function made pure virtual
 };
 
 class Derv : public Base {
@@ -48,13 +43,6 @@ class Derv : public Base {
 };
 
 int main() {
-    //Base obj1;
-    //printf ("val is %d\n", obj1.var);
-
-//    Base *base_ptr = new (Derv);
-//    base_ptr->func();
-//    printf ("val is %d\n\n\n", base_ptr->var);
-
 
     // base class object assigned child obj ptr
     Derv *obj2 = new Derv;
@@ -67,16 +55,8 @@ int main() {
     Base& b1 = obj1;
     b1.func();    
 
-    //Base *bptr = obj2;
-    //bptr->func();
-
-   // Base &b1 = obj1;
-    //b1.func();    
-
-//    printf ("val is %d\n", b.var);
-
-//    obj2.func();
-//    printf ("val after func call is %d\n", obj2.var);
+    // this is not allowed for virtual
+    Base objB;
 
     return 0;
 }

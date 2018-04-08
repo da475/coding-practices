@@ -19,6 +19,12 @@ class animals {
                 number_eyes = 1;
             }
 
+            animals(int legs) {
+                name = "cat";
+                number_legs = legs;
+                number_eyes = 1;
+            }
+
             string name;    // name of the animal
             bool carni_herbi;
 
@@ -51,18 +57,18 @@ class dinos : private animals {
 
 int main() {
 
-    animals ani;
-    ani.name = "cow";
-    ani.set_legs(4);
-    ani.print_legs();
+//    animals ani;
+//    ani.name = "cow";
+//    ani.set_legs(4);
+//    ani.print_legs();
 
-    animals *aniptr = new(animals);
+    animals *aniptr = new animals(5);
 //    aniptr->name = "another cow";     //default name set in construct would print here
     aniptr->print_legs();
 
-    dinos dino1;
-    dino1.name = "terex";
-    dino1.print_wings();
+//    dinos dino1;
+//    dino1.name = "terex";
+//    dino1.print_wings();
 
     return 0;
 }
